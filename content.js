@@ -22,10 +22,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             // const paragraph = match ? match[1] : null;
 
             if (paragraph) {
-                // 截取到第一个空格并转大写
-                let formatted = paragraph.replace(/\[.*?\]\s*/g, '').split(' ')[0].toUpperCase();
-                paragraph = formatted;
                 console.log("get success: ", paragraph);
+                // 截取到第一个空格并转大写
+                let formatted = paragraph
+                    .replace(/\[.*?\]\s*/g, '')
+                    .replace(/\【.*?\】\s*/g, '')
+                    .split(' ')[0]
+                    .toUpperCase();
+                paragraph = formatted;
 
                 chrome.runtime.sendMessage({
                     action: "saveParagraph",
