@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "easy-element-grabber",
+    "version": "1.0",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "commands"
+    ],
+    "host_permissions": [
+        "*://*.target-website.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.target-website.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup/popup.html"
+    },
+    "commands": {
+        "save-paragraph": {
+            "suggested_key": {
+                "default": "Alt+X",
+                "mac": "Command+Shift+L"
+            },
+            "description": "Save target paragraph"
+        }
+    },
+    "icons": {
+        "128": "icons/letter-r.png"
+    }
+}
