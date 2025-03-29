@@ -1,5 +1,5 @@
 // 预设选择器（用户可自行修改）
-const XPATH_SELECTOR = '//a[@id="t_tt1_0"]'; // 示例XPath
+const XPATH_SELECTOR = '//h1[@id="subject_tpc"]'; // 示例XPath
 // 或使用正则表达式：const REGEX = /Important: (.+?)\b/;
 
 // 处理提取请求
@@ -23,7 +23,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
             if (paragraph) {
                 // 截取到第一个空格并转大写
-                let formatted = paragraph.split(' ')[0].toUpperCase();
+                let formatted = paragraph.replace(/\[.*?\]\s*/g, '').split(' ')[0].toUpperCase();
                 paragraph = formatted;
                 console.log("get success: ", paragraph);
 

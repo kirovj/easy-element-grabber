@@ -28,7 +28,7 @@ async function copyAllParagraphs() {
     // 拼接所有段落内容
     const textToCopy = savedParagraphs
         .map(item => item.paragraph)
-        .join('\n\n'); // 使用两个换行分隔段落
+        .join('\n');
 
     try {
         await navigator.clipboard.writeText(textToCopy);
