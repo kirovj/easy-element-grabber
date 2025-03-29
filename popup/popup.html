@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>段落收集器</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h3>已保存段落：</h3>
+    <h3>已保存段落（共<span id="count">0</span>条）：</h3>
     <div id="results"></div>
-    <button id="export">导出数据</button>
+    <div class="button-group">
+        <button id="copyAll">复制所有</button>
+        <button id="clearAll">清除全部</button>
+    </div>
+    <div id="notification" class="notification"></div>
     <script src="popup.js"></script>
 </body>
 

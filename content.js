@@ -14,7 +14,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                 XPathResult.FIRST_ORDERED_NODE_TYPE,
                 null
             );
-            const paragraph = result.singleNodeValue?.textContent?.trim();
+            let paragraph = result.singleNodeValue?.textContent?.trim();
 
             // 如果用正则：
             // const text = document.body.textContent;
@@ -22,6 +22,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             // const paragraph = match ? match[1] : null;
 
             if (paragraph) {
+                // 截取到第一个空格并转大写
+                let formatted = paragraph.split(' ')[0].toUpperCase();
+                paragraph = formatted;
+
                 chrome.runtime.sendMessage({
                     action: "saveParagraph",
                     url: window.location.href,

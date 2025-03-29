@@ -1,0 +1,92 @@
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    min-width: 380px;
+    /* 增加最小宽度 */
+    padding: 15px;
+    /* 增加内边距 */
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    white-space: nowrap;
+    /* 防止标题换行 */
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+#count {
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.item {
+    margin: 12px 0;
+    padding: 12px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.item:hover {
+    transform: translateX(3px);
+}
+
+.paragraph {
+    color: #2d3339;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.meta {
+    color: #6c757d;
+    font-size: 0.75em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+#copyAll {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#clearAll {
+    background: #dc3545;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+#clearAll:hover {
+    background: #bb2d3b;
+}
+
+.notification {
+    bottom: 90px;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
