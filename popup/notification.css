@@ -1,0 +1,22 @@
+#custom-notification {
+    font-family: 'Segoe UI', system-ui;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#custom-notification::before {
+    content: '✓';
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 不同状态样式 */
+#custom-notification.error {
+    background: #ff4444;
+}
+
+#custom-notification.warning {
+    background: #ffbb33;
+}
